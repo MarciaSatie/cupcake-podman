@@ -14,21 +14,32 @@ The goal was starting to use Podman with a simple CLI script caleed cupcake.
 - Built on a minimal Alpine Linux image (~7 MB)
 - Shows how to version/tag images (e.g. `cupcake:latest`, `cupcake:v2`)
 - Teaches cleanup (`podman rm`, `podman image prune`)
+- Cross-platform launchers:
+
+    - cupcake (Linux/macOS shell script)
+    - cupcake.ps1 (Windows PowerShell script)
 
 ---
 
 ## Usage
 
-### 1. Build the image
+### 1. Build the image or Use an exstent one.
+#### - Build Locally:
 ```bash
 podman build -t cupcake:latest .
 ```
+#### Use prebuilt image (faster)
+```bash
+podman load -i cupcake.tar
+```
+
+## Linux / macOS
 
 ### 2.Run with default message.
 ```bash
 podman run --rm cupcake
 ```
-### Output:
+#### Output:
 ```bash
 Hello from Podman!
 I like cupcake
@@ -44,6 +55,13 @@ podman run --rm cupcake "Hello Cupcake!"
 Hello from Cupcake!
 I like cupcake
 ```
+
+## Windows (Powershell)
+### 2.Run with custom message.
+```bash
+.\cupcake.ps1 "Hello Cupcake!"
+```
+### 
 
 ## Why this project?
 -Practice with Podman basics: images, containers, tagging, cleanup
