@@ -16,8 +16,6 @@ The goal was starting to use Podman with a simple CLI script caleed cupcake.
 - Teaches cleanup (`podman rm`, `podman image prune`)
 
 ---
-## Podman
-install podman from https://podman-desktop.io/downloads
 
 ## Usage
 
